@@ -98,4 +98,18 @@ http://your.ip:80/test.html
 <img src="./images/submit_napping.png">
 </center><br>
 By following tcp traffic we can see captured creds:<br>
+<center>
 <img src="./images/creds_wireshark_napping.png">
+</center><br>
+NOTE: Password is URL encoded. Decoding it you've got C@ughtm3napping123
+<br>
+Using captured credentials for SSH login in.<br>
+<center>
+<img src="writeups/images/ssh_login_daniel_napping.png">
+</center><br>
+We are in!!!
+
+<center>
+<img src="./images/query_py_napping.png">
+</center><br>
+<h2><span style="color:red">3. 🔓 Privilege Escalation Part</span></h2><br>
