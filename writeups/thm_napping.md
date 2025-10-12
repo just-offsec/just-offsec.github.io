@@ -133,3 +133,15 @@ Open netcat listener, and we wait untill script will be executed.<br>
 <center>
 <img src="./images/adrian_napping.png">
 </center><br>
+Direct command sudo -l shows us we can run vim as a sudo user.<br>
+Lets get root!!!<br>
+<center>
+Checking GTFObins<br>
+<img src="./images/gtfo_napping.png">
+</center><br>
+
+Writing the command with sudo will give us root:<br>
+<center>
+<img src="./images/privesc_root_napping.png">
+</center><br>
+We are root!!!
