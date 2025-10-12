@@ -15,7 +15,7 @@ title: "Napping"
 <h2><span style="color:red">1. 🔍 Enumeration Part + Directory Bruteforcing</span></h2><br>
 We will start from the nmap scan:
 <center>
-<img src="./images/nmap_napping.png"> 
+<img src="./images/napping/nmap_napping.png"> 
 </center><br>
 
 Directory bruteforcing using gobuster tool:<br>
@@ -23,7 +23,7 @@ Directory bruteforcing using gobuster tool:<br>
 gobuster dir -u http://10.10.136.217/ -w=/usr/share/wordlists/dirbuster/directory-list-lowercase-2.3-medium.txt -x php
 ```
 <center>
-<img src="./images/gobuster_napping.png">
+<img src="./images/napping/gobuster_napping.png">
 </center><br>
 
 We also see that /admin directory appeared, going further to see more:<br>
@@ -32,28 +32,28 @@ gobuster dir -u http://10.10.136.217/admin/ -w=/usr/share/wordlists/dirbuster/di
 ```
 
 <center>
-<img src="./images/gobuster_admin_napping.png"> 
+<img src="./images/napping/gobuster_admin_napping.png"> 
 </center><br>
 
 Cheking the main page:<br>
 <center>
-<img src="./images/mainpage_napping.png">
+<img src="./images/napping/mainpage_napping.png">
 </center>
 
 We will sign up a new account<br>
 <center>
-<img src="./images/sign_up_napping.png">
+<img src="./images/napping/sign_up_napping.png">
 </center><br>
 
 Also checking the admin page on /admin/login.php<br>
 <center>
-<img src="./images/admin_login_napping.png">
+<img src="./images/napping/admin_login_napping.png">
 </center><br>
 
 After creating and signing up as a hacker, we see the text that says "Please submit your link so that we can get started.
 All links will be reviewed by our admin who also built this site!"<br>
 <center>
-<img src="./images/loggedin_napping.png">
+<img src="./images/napping/loggedin_napping.png">
 </center>
 <br>
 
@@ -63,7 +63,7 @@ By cloning the /admin/login.php page and creating a phishing HTML page with cred
 
 Let's get our /admin/login.php page:<br>
 <center>
-<img src="./images/wget_login_php_napping.png">
+<img src="./images/napping/wget_login_php_napping.png">
 </center><br>
 
 And create test.html document for our phishing part:<br>
@@ -81,13 +81,13 @@ NOTE: You write your IP from the attacker mashine and store both (login.php and 
 
 From the files directory we run a python server on port 80 and 8000.<br>
 <center>
-<img src="./images/python3_napping.png">
+<img src="./images/napping/python3_napping.png">
 </center>
 <br>
 
 Starting WIRESHARK for our phishing process:<br>
 <center>
-<img src="./images/wireshark_start_napping.png">
+<img src="./images/napping/wireshark_start_napping.png">
 </center>
 NOTE: start capturing traffic before u send a link to the target, and by your openvpn interface (I have tun0).
 <br>
@@ -98,24 +98,24 @@ http://your.ip:80/test.html
 ```
 <br>
 <center>
-<img src="./images/submit_napping.png">
+<img src="./images/napping/submit_napping.png">
 </center><br>
 
 By following tcp traffic we can see captured creds:<br>
 <center>
-<img src="./images/creds_wireshark_napping.png">
+<img src="./images/napping/creds_wireshark_napping.png">
 </center><br>
 NOTE: Password is URL encoded. Decoding it you've got C@ughtm3napping123
 
 <br>
 Using captured credentials for SSH login in.<br>
 <center>
-<img src="./images/ssh_login_daniel_napping.png">
+<img src="./images/napping/ssh_login_daniel_napping.png">
 </center><br>
 
 We are in!!!<br>
 <center>
-<img src="./images/query_py_napping.png">
+<img src="./images/napping/query_py_napping.png">
 </center><br>
 
 <h2><span style="color:red">3. 🔓 Privilege Escalation Part</span></h2><br>
@@ -124,23 +124,23 @@ After some time of investigation we can find Adrian user and a file query.py,<br
 this script runs by it's user every 1 minute.<br>
 Also we can read and write it, lets use it to get an Adrian's shell.<br>
 <center>
-<img src="./images/revshesll_napping.png">
+<img src="./images/napping/revshesll_napping.png">
 </center><br>
 NOTE: your IP will be different.<br>
 
 Open netcat listener, and we wait untill script will be executed.<br>
 <center>
-<img src="./images/adrian_napping.png">
+<img src="./images/napping/adrian_napping.png">
 </center><br>
 Direct command sudo -l shows us we can run vim as a sudo user.<br>
 Lets get root!!!<br>
 <center>
 Checking GTFObins<br>
-<img src="./images/gtfo_napping.png">
+<img src="./images/napping/gtfo_napping.png">
 </center><br>
 
 Writing the command with sudo will give us root:<br>
 <center>
-<img src="./images/privesc_root_napping.png">
+<img src="./images/napping/privesc_root_napping.png">
 </center><br>
 We are root!!!
