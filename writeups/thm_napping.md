@@ -33,7 +33,7 @@ gobuster dir -u http://10.10.136.217/admin/ -w=/usr/share/wordlists/dirbuster/di
 
 <center>
 <img src="./images/gobuster_admin_napping.png"> 
-</center>
+</center><br>
 
 Cheking the main page:<br>
 <center>
@@ -48,7 +48,7 @@ We will sign up a new account<br>
 Also checking the admin page on /admin/login.php<br>
 <center>
 <img src="./images/admin_login_napping.png">
-</center>
+</center><br>
 
 After creating and signing up as a hacker, we see the text that says "Please submit your link so that we can get started.
 All links will be reviewed by our admin who also built this site!"<br>
@@ -77,7 +77,6 @@ And create test.html document for our phishing part:<br>
    </body>
 </html>
 ```
-<br>
 NOTE: You write your IP from the attacker mashine and store both (login.php and test.html) files at the same directory.<br>
 
 From the files directory we run a python server on port 80 and 8000.<br>
@@ -89,7 +88,7 @@ From the files directory we run a python server on port 80 and 8000.<br>
 Starting WIRESHARK for our phishing process:<br>
 <center>
 <img src="./images/wireshark_start_napping.png">
-</center><br>
+</center>
 NOTE: start capturing traffic before u send a link to the target, and by your openvpn interface (I have tun0).
 <br>
 
