@@ -78,4 +78,24 @@ And create test.html document for our phishing part:<br>
 <br>
 NOTE: You write your IP from the attacker mashine and store both (login.php and test.html) files at the same directory.<br>
 
-
+From the files directory we run a python server on port 80 and 8000.<br>
+<center>
+<img src="./images/python3_napping.png">
+</center>
+<br>
+Starting WIRESHARK for our phishing process:<br>
+<center>
+<img src="./images/wireshark_start_napping.png">
+</center><br>
+NOTE: start capturing traffic before u send a link to the target, and by your openvpn interface (I have tun0).
+<br>
+Sending our phishing link and straight ahead switching to WIRESHARK:<br>
+```bash
+http://your.ip:80/test.html
+```
+<br>
+<center>
+<img src="./images/submit_napping.png">
+</center><br>
+By following tcp traffic we can see captured creds:<br>
+<img src="./images/creds_wireshark_napping.png">
