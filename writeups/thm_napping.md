@@ -75,5 +75,7 @@ And create test.html document for our phishing part:<br>
    </body>
 </html>
 ```
-NOTE: You write your IP from the attacker mashine.<br>
+<br>
+NOTE: You write your IP from the attacker mashine and store both (login.php and test.html) files at the same directory.<br>
+
 
