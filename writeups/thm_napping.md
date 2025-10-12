@@ -3,6 +3,7 @@
 title: "Napping"
 
 ---
+
 <center>
 <strong>1. 🔍 Enumeration Part + Directory Bruteforcing</strong><br> 
 <strong>2. ☠️ Exploitation Part</strong><br>
@@ -119,3 +120,16 @@ We are in!!!<br>
 </center><br>
 
 <h2><span style="color:red">3. 🔓 Privilege Escalation Part</span></h2><br>
+
+After some time of investigation we can find Adrian user and a file query.py,<br>
+this script runs by it's user every 1 minute.<br>
+Also we can read and write it, lets use it to get an Adrian's shell.<br>
+<center>
+<img src="./images/revshesll_napping.png">
+</center><br>
+NOTE: your IP will be different.<br>
+
+Open netcat listener, and we wait untill script will be executed.<br>
+<center>
+<img src="./images/adrian_napping.png">
+</center><br>
