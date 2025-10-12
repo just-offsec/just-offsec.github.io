@@ -56,6 +56,13 @@ All links will be reviewed by our admin who also built this site!"<br>
 </center>
 <br>
 
-By cloning the login.php page and creating a phishing HTML page with credential capture functionality, we can attempt to trick the admin into entering their credentials when they review our submitted link.<br>
+By cloning the /admin/login.php page and creating a phishing HTML page with credential capture functionality, we can attempt to trick the admin into entering their credentials when they review our submitted link.<br>
+
 <h2><span style="color:red"><strong>2. ☠️ Exploitation Part</strong></span></h2><br>
+
+Let's get our /admin/login.php page:<br>
+<center>
+<img scr="./images/wget_login_php_napping.png">
+</center><br>
+And create test.html document for our phishing part:
 
