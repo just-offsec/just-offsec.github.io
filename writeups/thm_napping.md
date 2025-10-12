@@ -13,12 +13,12 @@ title: "Napping"
 ---
 
 <h2><span style="color:red">1. 🔍 Enumeration Part + Directory Bruteforcing</span></h2><br>
-We will start from the nmap scan:
+We start with an Nmap scan:
 <center>
 <img src="./images/napping/nmap_napping.png"> 
 </center><br>
 
-Directory bruteforcing using gobuster tool:<br>
+Next, we perform directory bruteforcing using Gobuster:<br>
 ```bash
 gobuster dir -u http://10.10.136.217/ -w=/usr/share/wordlists/dirbuster/directory-list-lowercase-2.3-medium.txt -x php
 ```
@@ -26,7 +26,7 @@ gobuster dir -u http://10.10.136.217/ -w=/usr/share/wordlists/dirbuster/director
 <img src="./images/napping/gobuster_napping.png">
 </center><br>
 
-We also see that /admin directory appeared, going further to see more:<br>
+The scan reveals an /admin directory. Let's explore it further:<br>
 ```bash
 gobuster dir -u http://10.10.136.217/admin/ -w=/usr/share/wordlists/dirbuster/directory-list-lowercase-2.3-medium.txt -x php
 ```
@@ -35,22 +35,22 @@ gobuster dir -u http://10.10.136.217/admin/ -w=/usr/share/wordlists/dirbuster/di
 <img src="./images/napping/gobuster_admin_napping.png"> 
 </center><br>
 
-Cheking the main page:<br>
+Cheсking the main page:<br>
 <center>
 <img src="./images/napping/mainpage_napping.png">
 </center>
 
-We will sign up a new account<br>
+We create a new account:<br>
 <center>
 <img src="./images/napping/sign_up_napping.png">
 </center><br>
 
-Also checking the admin page on /admin/login.php<br>
+Checking the admin portal at /admin/login.php:<br>
 <center>
 <img src="./images/napping/admin_login_napping.png">
 </center><br>
 
-After creating and signing up as a hacker, we see the text that says "Please submit your link so that we can get started.
+After registering as 'hacker', we see the text that says "Please submit your link so that we can get started.
 All links will be reviewed by our admin who also built this site!"<br>
 <center>
 <img src="./images/napping/loggedin_napping.png">
@@ -61,12 +61,12 @@ By cloning the /admin/login.php page and creating a phishing HTML page with cred
 
 <h2><span style="color:red"><strong>2. ☠️ Exploitation Part</strong></span></h2><br>
 
-Let's get our /admin/login.php page:<br>
+We download the /admin/login.php page:<br>
 <center>
 <img src="./images/napping/wget_login_php_napping.png">
 </center><br>
 
-And create test.html document for our phishing part:<br>
+Create test.html with redirection script:<br>
 ```bash
 <!DOCTYPE html>
 <html>
@@ -77,22 +77,22 @@ And create test.html document for our phishing part:<br>
    </body>
 </html>
 ```
-NOTE: You write your IP from the attacker mashine and store both (login.php and test.html) files at the same directory.<br>
+NOTE: Replace IP with your attacker machine IP and store both (login.php and test.html) files at the same directory.<br>
 
-From the files directory we run a python server on port 80 and 8000.<br>
+From the files directory we run Python servers on port 80 and 8000.<br>
 <center>
 <img src="./images/napping/python3_napping.png">
 </center>
 <br>
 
-Starting WIRESHARK for our phishing process:<br>
+We start Wireshark to capture the phishing process:<br>
 <center>
 <img src="./images/napping/wireshark_start_napping.png">
 </center>
-NOTE: start capturing traffic before u send a link to the target, and by your openvpn interface (I have tun0).
+NOTE: start capture traffic before sending a link to the target, and by your openvpn interface (I have tun0).
 <br>
 
-Sending our phishing link and straight ahead switching to WIRESHARK:<br>
+We send the phishing link and monitor WIRESHARK:<br>
 ```bash
 http://your.ip:80/test.html
 ```
@@ -101,19 +101,19 @@ http://your.ip:80/test.html
 <img src="./images/napping/submit_napping.png">
 </center><br>
 
-By following tcp traffic we can see captured creds:<br>
+Analyze TCP traffic in Wireshark to find captured credentials:<br>
 <center>
 <img src="./images/napping/creds_wireshark_napping.png">
 </center><br>
 NOTE: Password is URL encoded. Decoding it you've got C@ughtm3napping123
 
 <br>
-Using captured credentials for SSH login in.<br>
+Use captured credentials to SSH into the system:<br>
 <center>
 <img src="./images/napping/ssh_login_daniel_napping.png">
 </center><br>
 
-We are in!!!<br>
+Initial Access Obtained:<br>
 <center>
 <img src="./images/napping/query_py_napping.png">
 </center><br>
@@ -126,20 +126,20 @@ Also we can read and write it, lets use it to get an Adrian's shell.<br>
 <center>
 <img src="./images/napping/revshesll_napping.png">
 </center><br>
-NOTE: your IP will be different.<br>
+NOTE: your IP address will be different.<br>
 
-Open netcat listener, and we wait untill script will be executed.<br>
+Start netcat listener and wait for script execution:<br>
 <center>
 <img src="./images/napping/adrian_napping.png">
 </center><br>
 Direct command sudo -l shows us we can run vim as a sudo user.<br>
-Lets get root!!!<br>
+Let's get root!!!<br>
 <center>
 Checking GTFObins<br>
 <img src="./images/napping/gtfo_napping.png">
 </center><br>
 
-Writing the command with sudo will give us root:<br>
+Execute Vim with sudo to gain root shell:<br>
 <center>
 <img src="./images/napping/privesc_root_napping.png">
 </center><br>
