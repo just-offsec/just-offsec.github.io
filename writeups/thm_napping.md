@@ -62,7 +62,7 @@ By cloning the /admin/login.php page and creating a phishing HTML page with cred
 
 Let's get our /admin/login.php page:<br>
 <center>
-<img scr="./images/wget_login_php_napping.png">
+<img src="./images/wget_login_php_napping.png">
 </center><br>
 And create test.html document for our phishing part:
 
