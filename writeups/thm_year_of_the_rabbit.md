@@ -25,7 +25,8 @@ We start with an Nmap scan:<br>
 Next, we perform directory bruteforcing using Gobuster:<br>
 ```bash
 gobuster dir -u http://10.10.136.217/ -w=/usr/share/wordlists/dirbuster/directory-list-lowercase-2.3-medium.txt
-```<br>
+```
+<br>
 <center>
 <img src="./images/year_of_the_rabbit/2.png">
 </center><br>
@@ -35,6 +36,7 @@ The scan reveals an /assets directory. Let's explore it further:<br>
 ```bash
 gobuster dir -u http://10.10.136.217/asset/ -w=/usr/share/wordlists/dirbuster/directory-list-lowercase-2.3-medium.txt -x php
 ```
+<br>
 <center>
 <img src="./images/year_of_the_rabbit/3.png">
 </center><br>
