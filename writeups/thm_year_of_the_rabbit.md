@@ -25,9 +25,8 @@ We start with an Nmap scan:<br>
 
 Next, we perform directory bruteforcing using Gobuster:<br>
 ```bash
-gobuster dir -u http://10.10.136.217/ -w=/usr/share/wordlists/dirbuster/directory-list-lowercase-2.3-medium.txt
+gobuster dir -u http://10.10.218.46/ -w=/usr/share/wordlists/dirbuster/directory-list-lowercase-2.3-medium.txt
 ```
-<br>
 <center>
 <img src="./images/year_of_the_rabbit/2.png">
 </center><br><br>
@@ -61,9 +60,8 @@ Here you can notice some redirection moves and the browser tells us to turn off 
 <img src="./images/year_of_the_rabbit/6.png">
 </center><br><br>
 
----
 
-To turn JS off for Firefox just follow my guide:<br>
+To turn JS off for Firefox browser just follow my guide:<br>
 <center>
 <img src="./images/year_of_the_rabbit/7.png"><br><br>
 <img src="./images/year_of_the_rabbit/8.png"><br>
@@ -71,26 +69,30 @@ To turn JS off for Firefox just follow my guide:<br>
 Done<br>
 
 Finally we can open the page, as we already noticed page has no more .php extension<br>
-<center>
 <img src="./images/year_of_the_rabbit/9.png"><br>
- 
+<center>
 <img src="./images/year_of_the_rabbit/10.png">
-<center><br>
+<center><br><br>
 
 
-YOU HAVE TO WATCH THE VIDEO :))) it will give you the hint for future steps:<br>
+YOU HAVE TO WATCH THE VIDEO :))) it will give you the hint for future steps:<br><br>
 
 
+We can notice weird burp sound from the guy in the video<br>
+which says go to the BURPSUITE)), and also<br>
+noticed some reddirect moves when we opened our .php file<br>
+lets check it with BURPSUITE:<br>
 
-We can notice weird burp sound from the guy in the video which says go to the BURPSUITE)), and also noticed some reddirect moves when we opened our .php file lets check it with BURPSUITE:<br>
 <center>
 <img src="./images/year_of_the_rabbit/11.png"><br>
+ 
 <img src="./images/year_of_the_rabbit/12.png"><br>
+
 <img src="./images/year_of_the_rabbit/13.png">
-</center><br>
+</center><br><br>
 
 
-<h2><span style="color:red"><strong>2. ☠️ Exploitation Part</strong></span></h2><br>
+<h2><span style="color:red"><strong>2. ☠️ Exploitation Part</strong></span></h2><br><br>
 
 
 We found one picture where says Hot_babe xD<br> 
