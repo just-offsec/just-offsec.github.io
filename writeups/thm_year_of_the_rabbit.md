@@ -72,7 +72,7 @@ Finally we can open the page, as we already noticed page has no more .php extens
 <img src="./images/year_of_the_rabbit/9.png"><br>
 <center>
 <img src="./images/year_of_the_rabbit/10.png">
-<center><br><br>
+</center><br><br>
 
 
 YOU HAVE TO WATCH THE VIDEO :))) it will give you the hint for future steps:<br><br>
