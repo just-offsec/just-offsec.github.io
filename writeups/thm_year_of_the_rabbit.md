@@ -20,7 +20,8 @@ title: "Year of the Rabbit"
 We start with an Nmap scan:<br>
 <center>
 <img src="./images/year_of_the_rabbit/1.png"> 
-</center><br>
+</center><br><br>
+
 
 Next, we perform directory bruteforcing using Gobuster:<br>
 ```bash
@@ -29,25 +30,23 @@ gobuster dir -u http://10.10.136.217/ -w=/usr/share/wordlists/dirbuster/director
 <br>
 <center>
 <img src="./images/year_of_the_rabbit/2.png">
-</center><br>
+</center><br><br>
 
 
 The scan reveals an /assets directory. Let's explore it further:<br>
 ```bash
 gobuster dir -u http://10.10.136.217/asset/ -w=/usr/share/wordlists/dirbuster/directory-list-lowercase-2.3-medium.txt -x php
 ```
-<br>
+
 <center>
 <img src="./images/year_of_the_rabbit/3.png">
-</center><br>
-
+</center><br><br>
 
 
 We check the "style.css" file, let's see what's hidden there:<br>
 <center>
 <img src="./images/year_of_the_rabbit/4.png">
-</center>
-
+</center><br><br>
 
 
 Hint tells us to go and check "/sup3r_s3cr3t_fl4g.php":<br>
@@ -57,12 +56,12 @@ Hint tells us to go and check "/sup3r_s3cr3t_fl4g.php":<br>
 
 
 
-Here you can notice some redirection moves and the browser tells us to turn off javascript, lets do this:<br>
+Here you can notice some redirection moves and the browser tells us to turn off javascript:<br>
 <center>
 <img src="./images/year_of_the_rabbit/6.png">
-</center><br>
+</center><br><br>
 
-
+---
 
 To turn JS off for Firefox just follow my guide:<br>
 <center>
