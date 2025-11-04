@@ -17,23 +17,21 @@ title: "Year of the Rabbit"
 <h2><span style="color:red">1. 🔍 Enumeration Part + Directory Bruteforcing</span></h2><br>
 
 
-We start with an Nmap scan:
+We start with an Nmap scan:<br>
 <center>
 <img src="./images/year_of_the_rabbit/1.png"> 
 </center><br>
 
-
-
 Next, we perform directory bruteforcing using Gobuster:<br>
 ```bash
 gobuster dir -u http://10.10.136.217/ -w=/usr/share/wordlists/dirbuster/directory-list-lowercase-2.3-medium.txt
-```
+```<br>
 <center>
 <img src="./images/year_of_the_rabbit/2.png">
 </center><br>
 
 
-The scan reveals an /asset directory. Let's explore it further:<br>
+The scan reveals an /assets directory. Let's explore it further:<br>
 ```bash
 gobuster dir -u http://10.10.136.217/asset/ -w=/usr/share/wordlists/dirbuster/directory-list-lowercase-2.3-medium.txt -x php
 ```
@@ -52,7 +50,7 @@ We check the "style.css" file, let's see what's hidden there:<br>
 
 Hint tells us to go and check "/sup3r_s3cr3t_fl4g.php":<br>
 <center>
-<img src="./images/year_of_the_rabbit/.png">
+<img src="./images/year_of_the_rabbit/5.png">
 </center><br>
 
 
@@ -66,28 +64,29 @@ Here you can notice some redirection moves and the browser tells us to turn off 
 
 To turn JS off for Firefox just follow my guide:<br>
 <center>
-<img src="./images/year_of_the_rabbit/7.png">
+<img src="./images/year_of_the_rabbit/7.png"><br><br>
 <img src="./images/year_of_the_rabbit/8.png"><br>
-Done<br>
 </center><br>
+Done<br>
 
 Finally we can open the page, as we already noticed page has no more .php extension<br>
 <center>
-<img src="./images/year_of_the_rabbit/9.png">
+<img src="./images/year_of_the_rabbit/9.png"><br>
+ 
 <img src="./images/year_of_the_rabbit/10.png">
 <center><br>
 
-<center>
+
 YOU HAVE TO WATCH THE VIDEO :))) it will give you the hint for future steps:<br>
-</center><br>
 
 
-As we notice the burp from the guy in the video, and also noticed some reddirect moves when we opened our .php file lets check it with BURPSUITE:<br>
- <center>
-<img src="./images/year_of_the_rabbit/11.png">
-<img src="./images/year_of_the_rabbit/12.png">
+
+We can notice weird burp sound from the guy in the video which says go to the BURPSUITE)), and also noticed some reddirect moves when we opened our .php file lets check it with BURPSUITE:<br>
+<center>
+<img src="./images/year_of_the_rabbit/11.png"><br>
+<img src="./images/year_of_the_rabbit/12.png"><br>
 <img src="./images/year_of_the_rabbit/13.png">
-</center>
+</center><br>
 
 
 <h2><span style="color:red"><strong>2. ☠️ Exploitation Part</strong></span></h2><br>
