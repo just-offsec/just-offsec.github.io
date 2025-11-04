@@ -103,15 +103,15 @@ lets get that image and dig further:<br>
 
 With the comand ```bash binwalk -e Hot_babe.png ``` we can extract some info :<br>
 <center>
-<img src="./images/napping/15.png"><br>
-<img src="./images/napping/16.png"><br>
-<img src="./images/napping/17.png"><br>
+<img src="./images/year_of_the_rabbit/15.png"><br>
+<img src="./images/year_of_the_rabbit/16.png"><br>
+<img src="./images/year_of_the_rabbit/17.png"><br>
 </center><br>
 
 
 With command ```bash strings ``` lets get some more info:<br>
 <center>
-<img src="./images/napping/18.png">
+<img src="./images/year_of_the_rabbit/18.png">
 </center><br>
 
 Oh, we got a hint to the next step (we have now a username for FTP and few passes)<br>
@@ -127,7 +127,7 @@ Le'ts use hydra to get a valid password:<br>
 
 And let's connect to the ftp:<br>
 <center>
-<img src="./images/napping/21.png"> 
+<img src="./images/year_of_the_rabbit/21.png"> 
 </center><br>
 
 As we've connected, let's get files from there:<br>
