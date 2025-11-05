@@ -128,7 +128,7 @@ Use hydra to bruteforce this passwords for FTP using:<br>
 <img src="./images/year_of_the_rabbit/20.png"><br>
 </center><br>
 
-Connect to the FTP server and get file:<br>
+Connect to the FTP server and get file Eli's_Creds.txt:<br>
 <center>
 <img src="./images/year_of_the_rabbit/21.png"><br>
 </center><br>
@@ -146,20 +146,19 @@ Eli's_Creds.txt shows us some symbols, simple GPT short message will tell us wha
 </center><br>
 
 Finding online tool for decode and get our new creds<br>
-<center>
 <img src="./images/year_of_the_rabbit/25.png">
-<img src="./images/year_of_the_rabbit/26.png">
-<center>
-<br>
+<img src="./images/year_of_the_rabbit/26.png"><br><br>
+
 
 Lets ssh to the system:<br>
 <center>
 <img src="./images/year_of_the_rabbit/27.png">
 </center><br>
+
 And check the message:<br>
 <center>
 <img src="./images/year_of_the_rabbit/28.png">
-</center><br>
+</center><br><br>
 
 <h2><span style="color:red">3. 🔓 Privilege Escalation Part</span></h2><br>
 
