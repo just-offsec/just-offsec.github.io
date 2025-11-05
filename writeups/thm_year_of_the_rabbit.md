@@ -98,34 +98,30 @@ We found a new directory, open it:<br>
 
 We found one picture where says Hot_babe xD<br> 
 Let's get that image and dig further:<br>
-<center>
-<img src="./images/year_of_the_rabbit/14.png">
-</center><br>
+
+<img src="./images/year_of_the_rabbit/14.png"><br>
 
 
 With the comand
 ```bash
 binwalk -e Hot_babe.png
 ```
-we can extract some info :<br>
+extracting some info :<br>
 
-<center>
 <img src="./images/year_of_the_rabbit/15.png"><br>
-</center><br>
 
 <img src="./images/year_of_the_rabbit/16.png"><br>
 
-<img src="./images/year_of_the_rabbit/17.png"><br>
+<img src="./images/year_of_the_rabbit/17.png"><br><br>
 
 
-With command
+With command strings extracting all metadata from the file:
 ```bash
 strings 
 ```
-Let's get some more info:<br>
-<center>
-<img src="./images/year_of_the_rabbit/18.png">
-</center><br>
+<img src="./images/year_of_the_rabbit/18.png"><br>
+Here we have a message of possible correct password:
+<img src="./images/year_of_the_rabbit/19.png"><br><br>
 
 
 Oh, we got a hint to the next step (we have now a username for FTP and few passes)<br>
