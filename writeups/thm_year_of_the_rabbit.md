@@ -80,14 +80,15 @@ YOU HAVE TO WATCH THE VIDEO :))) it will give you the hint for future steps:<br>
 
 We can notice weird burp sound from the guy in the video<br>
 which says go to the BURPSUITE)), and also<br>
-noticed some reddirect moves when we opened our .php file<br>
-lets check it with BURPSUITE:<br>
+notice some reddirect moves when we open our .php file<br>
+let's check it with BURPSUITE:<br>
 
-<center>
+
 <img src="./images/year_of_the_rabbit/11.png"><br>
  
 <img src="./images/year_of_the_rabbit/12.png"><br>
-
+We found a new directory, open it:<br>
+<center>
 <img src="./images/year_of_the_rabbit/13.png">
 </center><br><br>
 
@@ -96,29 +97,42 @@ lets check it with BURPSUITE:<br>
 
 
 We found one picture where says Hot_babe xD<br> 
-lets get that image and dig further:<br>
+Let's get that image and dig further:<br>
 <center>
 <img src="./images/year_of_the_rabbit/14.png">
 </center><br>
 
 
-With the comand ```bash binwalk -e Hot_babe.png ``` we can extract some info :<br>
+With the comand
+```bash
+binwalk -e Hot_babe.png
+```
+we can extract some info :<br>
+
 <center>
 <img src="./images/year_of_the_rabbit/15.png"><br>
-<img src="./images/year_of_the_rabbit/16.png"><br>
-<img src="./images/year_of_the_rabbit/17.png"><br>
 </center><br>
 
+<img src="./images/year_of_the_rabbit/16.png"><br>
 
-With command ```bash strings ``` lets get some more info:<br>
+<img src="./images/year_of_the_rabbit/17.png"><br>
+
+
+With command
+```bash
+strings 
+```
+Let's get some more info:<br>
 <center>
 <img src="./images/year_of_the_rabbit/18.png">
 </center><br>
+
 
 Oh, we got a hint to the next step (we have now a username for FTP and few passes)<br>
 <center>
 <img src="./images/year_of_the_rabbit/22.png">
 </center><br>
+
 
 Le'ts use hydra to get a valid password:<br>
 <center>
@@ -130,6 +144,7 @@ And let's connect to the ftp:<br>
 <center>
 <img src="./images/year_of_the_rabbit/21.png"> 
 </center><br>
+
 
 As we've connected, let's get files from there:<br>
 <center>
