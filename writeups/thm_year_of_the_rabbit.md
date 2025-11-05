@@ -99,7 +99,7 @@ We found a new directory, open it:<br>
 We found one picture where says Hot_babe xD<br> 
 Let's get that image and dig further:<br>
 
-<img src="./images/year_of_the_rabbit/14.png"><br>
+<img src="./images/year_of_the_rabbit/14.png"><br><br>
 
 
 With the comand
@@ -112,7 +112,7 @@ extracting some info :<br>
 
 <img src="./images/year_of_the_rabbit/16.png"><br>
 
-<img src="./images/year_of_the_rabbit/17.png"><br><br>
+<img src="./images/year_of_the_rabbit/17.png"><br><br><br>
 
 
 With command strings extracting all metadata from the file:
@@ -120,34 +120,26 @@ With command strings extracting all metadata from the file:
 strings 
 ```
 <img src="./images/year_of_the_rabbit/18.png"><br>
-Here we have a message of possible correct password:
+Here we have a message of possible correct password:<br>
 <img src="./images/year_of_the_rabbit/19.png"><br><br>
 
+Use hydra to bruteforce this passwords for FTP using:<br>
+<center>
+<img src="./images/year_of_the_rabbit/20.png"><br>
+</center><br>
 
-Oh, we got a hint to the next step (we have now a username for FTP and few passes)<br>
+Connect to the FTP server and get file:<br>
+<center>
+<img src="./images/year_of_the_rabbit/21.png"><br>
+</center><br>
+
+Trying to gues what it can be:
 <center>
 <img src="./images/year_of_the_rabbit/22.png">
 </center><br>
 
 
-Le'ts use hydra to get a valid password:<br>
-<center>
-<img src="./images/year_of_the_rabbit/23.png">
-</center><br>
-
-
-And let's connect to the ftp:<br>
-<center>
-<img src="./images/year_of_the_rabbit/21.png"> 
-</center><br>
-
-
-As we've connected, let's get files from there:<br>
-<center>
-<img src="./images/year_of_the_rabbit/22.png">
-</center><br>
-
-Creds.txt show us some symbols, simple GPT short message will tell us what are we dealing with:<br>
+Eli's_Creds.txt shows us some symbols, simple GPT short message will tell us what are we dealing with:<br>
 <center>
 <img src="./images/year_of_the_rabbit/23.png">
 <img src="./images/year_of_the_rabbit/24.png">
