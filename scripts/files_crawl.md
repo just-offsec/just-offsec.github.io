@@ -4,7 +4,16 @@ title: "Information disclosure vuln. + 404 files access + Wayback mashine"
 
 ---
 
-<span style="color:red">Crawl through Wayback Machine CDX API endpoints + from all possible subdomains: </span><br>
+<center>
+  <strong>
+    <span style="color:red">Information disclosure vuln. + 404 files access + Wayback mashine </span>
+  </strong>
+</center>
+<br>
+
+---
+
+<strong><span style="color:red">Crawl through Wayback Machine CDX API endpoints + from all possible subdomains: </span><strong><br>
 
 From the CLI:
 ```bash
