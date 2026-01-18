@@ -5,4 +5,4 @@ permalink: /scripts/
 
 # 🧩 Bug bounty scripts
 
-- [Files crawling with Wayback Mashine](./files_crawl.md)
+- [Information disclosure vuln. + 404 files access + Wayback mashine](./files_crawl.md)
