@@ -10,9 +10,9 @@ title: "Information disclosure vuln. + 404 files access + Wayback mashine"
   </strong>
 </center></h3>
 <br>
-
 ---
 
+<br>
 <strong><span style="color:red">Crawl through Wayback Machine CDX API endpoints + from all possible subdomains: </span><strong><br>
 
 From the CLI:
@@ -31,8 +31,9 @@ https://web.archive.org/cdx/search/cdx?url=*.example.com/*&collapse=urlkey&outpu
 
 <br>
 <br>
-<span style="color:red">Advanced crawl with filtering for different file extentions + from all possible subdomains: </span>
+<strong><span style="color:red">Advanced crawl with filtering for different file extentions + from all possible subdomains: </span></strong>
 <br>
+
 From the CLI:
 ```bash
 curl "https://web.archive.org/cdx/search/cdx?url=*.example.com/*&collapse=urlkey&output=text&fl=original&filter=original:.*\.(xls|xml|xlsx|json|pdf|sqldoc|docx|pptx|txt|git|zip|tar\.gz|tgz|bak|7z|rar|log|cache|secret|db|backup|yml|gz|config|csv|yaml|md|md5|exe|dll|bin|ini|bat|sh|tar|deb|rpm|iso|img|env|apk|msi|dmg|tmp|crt|pem|key|pub|asc)$" | tee output.txt
