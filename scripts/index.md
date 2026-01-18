@@ -4,4 +4,5 @@ permalink: /scripts/
 ---
 
 # 🧩 Bug bounty scripts
-Here i put some scripts
+
+- [Files crawling with Wayback Mashine](./scripts/files_crawl.md)
