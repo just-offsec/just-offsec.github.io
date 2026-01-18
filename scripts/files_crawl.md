@@ -10,6 +10,7 @@ title: "Information disclosure vuln. + 404 files access + Wayback mashine"
   </strong>
 </center></h3>
 <br>
+
 ---
 
 <br>
