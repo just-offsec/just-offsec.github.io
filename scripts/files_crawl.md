@@ -49,15 +49,15 @@ From the CLI:
 curl "https://web.archive.org/cdx/search/cdx?url=*.example.com/*&collapse=urlkey&output=text&fl=original&filter=original:.*\.(xls|xml|xlsx|json|pdf|sqldoc|docx|pptx|txt|git|zip|tar\.gz|tgz|bak|7z|rar|log|cache|secret|db|backup|yml|gz|config|csv|yaml|md|md5|exe|dll|bin|ini|bat|sh|tar|deb|rpm|iso|img|env|apk|msi|dmg|tmp|crt|pem|key|pub|asc)$" | tee output.txt
 ```
 
-<span style="color:red">NOTE</span>: access the files with the direct link, if you have 404 error -> use Wayback machine to invistigate your findings, or use prepered command which will give you links directly from Wayback mashine!
+<span style="color:red">NOTE</span>: access the files with the direct link, if you have 404 error -> use Wayback machine to invistigate your findings, or use prepered command below which will give you links directly from Wayback mashine:
 
 <br>
 ```bash
-curl "https://web.archive.org/cdx/search/cdx?url=*.haca.com/*&collapse=urlkey&output=text&fl=original&filter=original:.*\.(xls|xml|xlsx|json|pdf|sqldoc|docx|pptx|txt|git|zip|tar\.gz|tgz|bak|7z|rar|log|cache|secret|db|backup|yml|gz|config|csv|yaml|md|md5|exe|dll|bin|ini|bat|sh|tar|deb|rpm|iso|img|env|apk|msi|dmg|tmp|crt|pem|key|pub|asc)$" | awk '{print "https://web.archive.org/web/"$1"/"$2}' | tee waback_target_files.txt
+curl "https://web.archive.org/cdx/search/cdx?url=*.example.com/*&collapse=urlkey&output=text&fl=original&filter=original:.*\.(xls|xml|xlsx|json|pdf|sqldoc|docx|pptx|txt|git|zip|tar\.gz|tgz|bak|7z|rar|log|cache|secret|db|backup|yml|gz|config|csv|yaml|md|md5|exe|dll|bin|ini|bat|sh|tar|deb|rpm|iso|img|env|apk|msi|dmg|tmp|crt|pem|key|pub|asc)$" | awk '{print "https://web.archive.org/web/"$1"/"$2}' | tee waback_target_files.txt
 ```
 
 <br>
-<span style="color:=red">NOTE</span>: You will have domains directly from web archive! / Change *.example.com as you prefere
+<span style="color:=red">NOTE</span>: You will have domains directly from web archive! / Change *.example.com as you prefere.
 
 ---
 
@@ -81,7 +81,7 @@ grep -Ei '\.pdf' output.txt | while read -r url; do curl -fsL "$url" | pdftotext
 https://www.virustotal.com/vtapi/v2/domain/report?apikey=your_api_key_here&domain=example.com
 ```
 ```bash
-https://otx.alienvault.com/api/v1/indicators/hostname/domain.com/url_list?limit=500&page=1 
+https://otx.alienvault.com/api/v1/indicators/hostname/example.com/url_list?limit=500&page=1 
 ```
 
 ---
