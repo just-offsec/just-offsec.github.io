@@ -21,11 +21,19 @@ From the CLI:
 curl -G "https://web.archive.org/cdx/search/cdx" --data-urlencode "url=*.example.com/*" --data-urlencode "collapse=urlkey" --data-urlencode "output=text" --data-urlencode "fl=original" > out.txt
 ```
 
+<span style="color:red">NOTE</span>: You will have a clear domains that may show 404 error. / Change *.example.com
+
 <br>
 From the browser bar:
 ```bash
 https://web.archive.org/cdx/search/cdx?url=*.example.com/*&collapse=urlkey&output=text&fl=original
 ```
+
+```bash
+curl -G "https://web.archive.org/cdx/search/cdx" --data-urlencode "url=*.example.com/*" --data-urlencode "collapse=urlkey" --data-urlencode "output=text" --data-urlencode "fl=original" | awk '{print "https://web.archive.org/web/"$1"/"$2}' | tee waback_example.txt
+```
+
+<span style="color:red">NOTE</span>: Here u will have urls which going directly to the wayback mashine. / Change *.example.com as you prefere
 
 ---
 
