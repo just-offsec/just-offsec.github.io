@@ -29,6 +29,7 @@ From the browser bar:
 https://web.archive.org/cdx/search/cdx?url=*.example.com/*&collapse=urlkey&output=text&fl=original
 ```
 
+<br>
 ```bash
 curl -G "https://web.archive.org/cdx/search/cdx" --data-urlencode "url=*.example.com/*" --data-urlencode "collapse=urlkey" --data-urlencode "output=text" --data-urlencode "fl=original" | awk '{print "https://web.archive.org/web/"$1"/"$2}' | tee waback_example.txt
 ```
@@ -48,8 +49,15 @@ From the CLI:
 curl "https://web.archive.org/cdx/search/cdx?url=*.example.com/*&collapse=urlkey&output=text&fl=original&filter=original:.*\.(xls|xml|xlsx|json|pdf|sqldoc|docx|pptx|txt|git|zip|tar\.gz|tgz|bak|7z|rar|log|cache|secret|db|backup|yml|gz|config|csv|yaml|md|md5|exe|dll|bin|ini|bat|sh|tar|deb|rpm|iso|img|env|apk|msi|dmg|tmp|crt|pem|key|pub|asc)$" | tee output.txt
 ```
 
-<span style="color:red">NOTE</span>: access the files with the direct link, if you have 404 error -> use Wayback machine to invistigate your findings.
+<span style="color:red">NOTE</span>: access the files with the direct link, if you have 404 error -> use Wayback machine to invistigate your findings, or use prepered command which will give you links directly from Wayback mashine!
 
+<br>
+```bash
+curl "https://web.archive.org/cdx/search/cdx?url=*.haca.com/*&collapse=urlkey&output=text&fl=original&filter=original:.*\.(xls|xml|xlsx|json|pdf|sqldoc|docx|pptx|txt|git|zip|tar\.gz|tgz|bak|7z|rar|log|cache|secret|db|backup|yml|gz|config|csv|yaml|md|md5|exe|dll|bin|ini|bat|sh|tar|deb|rpm|iso|img|env|apk|msi|dmg|tmp|crt|pem|key|pub|asc)$" | awk '{print "https://web.archive.org/web/"$1"/"$2}' | tee waback_target_files.txt
+```
+
+<br>
+<span style="color:=red">NOTE</span>: You will have domains directly from web archive! / Change *.example.com as you prefere
 
 ---
 
