@@ -26,7 +26,7 @@ NOTE: output will be: https://web.archive.org/web/https://example.com/file.js
 >echo target.com | gau | grep '\.js$' | anew alljs.txt
 NOTE: (gau(GetAllURLs) using wayback mashine and many more other webtools for crawling, "anew" adding to the old .txt file new lines without dublicates.)
 
->katana -u samsung.com -d 5 -jc | grep '\.js$' | tee alljs.txt
+>katana -u target.com -d 5 -jc | grep '\.js$' | tee alljs.txt
 NOTE:  katana searches existing js files from current page.
 
 
@@ -41,7 +41,7 @@ Getting 200 responce:
 >cat alljs.txt | uro | sort -u | httpx-toolkit -mc 200 -o target.txt
 
 Using nuclei templates:
->cat samsung.txt | nuclei -t /home/user/nuclei-templates/credentials-disclosure-all.yaml -c 30
+>cat js_file.txt | nuclei -t /home/user/nuclei-templates/credentials-disclosure-all.yaml -c 30
 
 
 
