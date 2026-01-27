@@ -26,4 +26,4 @@ This site is my personal knowledge base, portfolio, and a place to share write-u
 
 ---
 
-This page DOES NOT Promote or encourage any illegal activities, all contents provided by This Page is meant for EDUCATIONAL PURPOSE only.
+<span style="font-size: 10px;"> This page DOES NOT Promote or encourage any illegal activities, all contents provided by This Page is meant for EDUCATIONAL PURPOSE only.</span>
